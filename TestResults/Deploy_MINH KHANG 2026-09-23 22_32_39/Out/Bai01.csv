@@ -1,0 +1,11 @@
+num,Result
+13,TRUE
+10,FALSE
+-13,Exception
+9999,Exception
+"12,5",Exception
+null,Exception
+0,FALSE
+1000,FALSE
+-1,Exception 
+1001,Exception

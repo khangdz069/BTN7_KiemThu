@@ -1,0 +1,9 @@
+n, Expected result
+4000,TRUE
+2004,TRUE
+2025,FALSE
+1000,Exception
+"1582,5",Exception
+null,Exception
+1582,FALSE
+1581,Exception

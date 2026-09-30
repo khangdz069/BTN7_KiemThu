@@ -1,0 +1,7 @@
+﻿Input,Expected
+"1;2;3",3
+"EMPTY",2147483647
+"abc;xyz;aaa","Lỗi : mảng không hợp lệ"
+"2147483647;-2147483648",2147483647
+"<MIN_INT","Lỗi : mảng không hợp lệ"
+">MAX_INT","Lỗi : mảng không hợp lệ"

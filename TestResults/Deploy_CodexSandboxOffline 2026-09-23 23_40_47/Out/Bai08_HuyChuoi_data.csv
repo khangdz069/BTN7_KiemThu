@@ -1,0 +1,10 @@
+﻿s,n,p,expected,ThrowsException
+"abcdef",2,2,"adef",FALSE
+"abcdef",2,0,"NA",TRUE
+"abcdef",1,5,"abcdf",FALSE
+"abcdef",0,2,"NA",TRUE
+"abcdef",4,2,"af",FALSE
+"abcdef",2,-2,"NA",TRUE
+"abcdef",2,6,"abcdef",FALSE
+"abcdef",-1,2,"NA",TRUE
+"abcdef",5,2,"a",FALSE

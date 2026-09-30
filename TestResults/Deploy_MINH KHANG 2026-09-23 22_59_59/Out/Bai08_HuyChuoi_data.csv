@@ -1,0 +1,10 @@
+﻿s,n,p,expected
+"abcdef",2,2,"abef"
+"abcdef",2,0,"cdef"
+"abcdef",1,5,"abcde"
+"abcdef",0,2,"abcdef"
+"abcdef",4,2,"ab"
+"abcdef",2,-2,"abcdef"
+"abcdef",2,6,"abcdef"
+"abcdef",-1,2,"abcdef"
+"abcdef",5,2,"ab"

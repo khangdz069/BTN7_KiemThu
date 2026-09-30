@@ -1,0 +1,4 @@
+sbin,Expected,ThrowsException
+1010,10,FALSE
+abc,0,TRUE
+"",0,TRUE
