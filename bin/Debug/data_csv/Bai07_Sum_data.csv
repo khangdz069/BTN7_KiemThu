@@ -1,4 +1,0 @@
-﻿n,expected_k,expected_s,is_exception
--5,1,0,false
-10,6,15,false
-0,2,1,false

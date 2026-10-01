@@ -53,13 +53,13 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="unit_test\Bai08_HuyChuoiTests.cs" />
-    <Compile Include="unit_test\Bai06_TinhTienDienTests.cs" />
-    <Compile Include="unit_test\Bai07_SumTests.cs" />
+    <Compile Include="unit_test\Bai08.cs" />
+    <Compile Include="unit_test\Bai06.cs" />
+    <Compile Include="unit_test\Bai07.cs" />
     <Compile Include="unit_test\Bai01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="unit_test\Bai02.cs" />
-    <Compile Include="unit_test\Bai09_Bai13_Test.cs" />
+    <Compile Include="unit_test\Bai09.cs" />
     <Compile Include="unit_test\Bai10.cs" />
     <Compile Include="unit_test\Bai11.cs" />
     <Compile Include="unit_test\Bai12.cs" />
@@ -83,13 +83,13 @@
     <Content Include="data_csv\Bai12.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data_csv\Bai08_HuyChuoi_data.csv">
+    <Content Include="data_csv\Bai08.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data_csv\Bai07_Sum_data.csv">
+    <Content Include="data_csv\Bai07.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data_csv\Bai06_TinhTienDien_data.csv">
+    <Content Include="data_csv\Bai06.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data_csv\Bai03.csv">
@@ -101,6 +101,9 @@
     <Content Include="data_csv\Bai05.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="data_csv\Bai09.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

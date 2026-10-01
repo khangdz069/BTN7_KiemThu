@@ -1,0 +1,7 @@
+﻿s1,s2,s3,expected
+"Truong dh cong nghiep","dh","dai hoc","Truong dai hoc cong nghiep"
+"","","",""
+"abc","","xyz","abc"
+Truong dh,dha,"","Truong d"
+"Truong dh","ptit","dai hoc","Truong dh"
+null,ptit,dai hoc,exception
