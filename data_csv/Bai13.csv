@@ -1,0 +1,9 @@
+﻿A,B,C,Expected
+10,10,10,10
+10,10,10.5,IndexOutOfRangeException
+-10,10,10,IndexOutOfRangeException
+60,10,10,IndexOutOfRangeException
+1,1,1,1
+50,50,50,50
+0,10,10,IndexOutOfRangeException
+51,10,10,IndexOutOfRangeException
