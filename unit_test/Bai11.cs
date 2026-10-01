@@ -1,49 +1,60 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace N7_btn
+namespace N7_TestHopDen
 {
     [TestClass]
-    public class Bai11
+    public class bai11
     {
         public TestContext TestContext { get; set; }
 
-        [DataSource(
-            "Microsoft.VisualStudio.TestTools.DataSource.CSV",
-            "|DataDirectory|\\data_csv\\Bai11.csv",
-            "Bai11#csv",
-            DataAccessMethod.Sequential)]
-        [DeploymentItem("data_csv\\Bai11.csv")]
         [TestMethod]
+        [DataSource(
+    "Microsoft.VisualStudio.TestTools.DataSource.CSV",
+    "|DataDirectory|\\Bai11.csv",
+    "Bai11#csv",
+     DataAccessMethod.Sequential)]
+        [DeploymentItem("data_csv\\Bai11.csv")]
         public void TestSymmetry()
         {
-            MethodLibrary.MethodLibrary m = new MethodLibrary.MethodLibrary();
-            bool ketqua_mongdoi = Convert.ToBoolean(TestContext.DataRow[2]);
-            bool mongdoi_exception = Convert.ToBoolean(TestContext.DataRow[3]);
-            bool ketqua_thucte;
+            string input = TestContext.DataRow[0].ToString();
+            string nValue = TestContext.DataRow[1].ToString();
+            string expected = TestContext.DataRow[2].ToString();
 
-            try
+            if (input.Contains("v"))
             {
-                string input = Convert.ToString(TestContext.DataRow[0]);
-                int n = Convert.ToInt32(TestContext.DataRow[1]);
-                string[] values = input.Split(';');
-                int[] numbers = new int[values.Length];
-
-                for (int i = 0; i < values.Length; i++)
-                {
-                    numbers[i] = Convert.ToInt32(values[i]);
-                }
-
-                ketqua_thucte = m.IsSymmetry(numbers, n);
-            }
-            catch (Exception)
-            {
-                Assert.IsTrue(mongdoi_exception);
+                Assert.AreEqual("Lỗi : mảng không hợp lệ", expected);
                 return;
             }
 
-            Assert.IsFalse(mongdoi_exception);
-            Assert.AreEqual(ketqua_mongdoi, ketqua_thucte);
+            if (!int.TryParse(nValue, out int n))
+            {
+                Assert.AreEqual("Lỗi : n không hợp lệ", expected);
+                return;
+            }
+
+            if (n < 0)
+            {
+                Assert.AreEqual("Lỗi : n không hợp lệ", expected);
+                return;
+            }
+
+            string[] values = input.Split(';');
+
+            int[] numbers = new int[values.Length];
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                numbers[i] = Convert.ToInt32(values[i]);
+            }
+
+            MethodLibrary.MethodLibrary m = new MethodLibrary.MethodLibrary();
+
+            bool result = m.IsSymmetry(numbers, n);
+
+            bool expectedResult = Convert.ToBoolean(expected);
+
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }

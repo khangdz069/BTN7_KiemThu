@@ -1,8 +1,8 @@
-﻿Input,N,Expected,ThrowsException
-"1;2;3;2;1",5,TRUE,FALSE
-"1;2;3;2;v",5,FALSE,TRUE
-"1;2;3;2;5",5,FALSE,FALSE
-"1;2;3;2;1","g",FALSE,TRUE
-"1;2;3;2;1",-1,TRUE,FALSE
-"1;1",2,TRUE,FALSE
-"1",0,TRUE,FALSE
+﻿Input,N,Expected
+"1;2;3;2;1",5,TRUE
+"1;2;3;2;v",5,"Lỗi : mảng không hợp lệ"
+"1;2;3;2;5",5,FALSE
+"1;2;3;2;1","g","Lỗi : n không hợp lệ"
+"1;2;3;2;1",-1,"Lỗi : n không hợp lệ"
+"1;1",2,TRUE
+"1",0,FALSE

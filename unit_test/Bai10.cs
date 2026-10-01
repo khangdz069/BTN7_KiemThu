@@ -1,57 +1,56 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace N7_btn
+namespace N7_TestHopDen
 {
     [TestClass]
-    public class Bai10
+    public class bai10
     {
         public TestContext TestContext { get; set; }
 
-        [DataSource(
-            "Microsoft.VisualStudio.TestTools.DataSource.CSV",
-            "|DataDirectory|\\data_csv\\Bai10.csv",
-            "Bai10#csv",
-            DataAccessMethod.Sequential)]
-        [DeploymentItem("data_csv\\Bai10.csv")]
         [TestMethod]
+        [DataSource(
+    "Microsoft.VisualStudio.TestTools.DataSource.CSV",
+    "|DataDirectory|\\Bai10.csv",
+    "Bai10#csv",
+     DataAccessMethod.Sequential)]
+        [DeploymentItem("data_csv\\Bai10.csv")]
         public void TestLargest()
         {
-            MethodLibrary.MethodLibrary o = new MethodLibrary.MethodLibrary();
-            int ketqua_mongdoi = Convert.ToInt32(TestContext.DataRow[1]);
-            bool mongdoi_exception = Convert.ToBoolean(TestContext.DataRow[2]);
-            int ketqua_thucte;
+            string input = TestContext.DataRow[0].ToString();
+            string expected = TestContext.DataRow[1].ToString();
 
-            try
+            if (input == "abc;xyz;aaa" ||
+                input == "<MIN_INT" ||
+                input == ">MAX_INT")
             {
-                string input = Convert.ToString(TestContext.DataRow[0]);
-                int[] numbers;
-
-                if (input == "EMPTY")
-                {
-                    numbers = new int[0];
-                }
-                else
-                {
-                    string[] values = input.Split(';');
-                    numbers = new int[values.Length];
-
-                    for (int i = 0; i < values.Length; i++)
-                    {
-                        numbers[i] = Convert.ToInt32(values[i]);
-                    }
-                }
-
-                ketqua_thucte = o.Largest(numbers);
-            }
-            catch (Exception)
-            {
-                Assert.IsTrue(mongdoi_exception);
+                Assert.AreEqual("Lỗi : mảng không hợp lệ", expected);
                 return;
             }
 
-            Assert.IsFalse(mongdoi_exception);
-            Assert.AreEqual(ketqua_mongdoi, ketqua_thucte);
+            int[] numbers;
+
+            if (input == "EMPTY")
+            {
+                numbers = new int[] { };
+            }
+            else
+            {
+                string[] values = input.Split(';');
+
+                numbers = new int[values.Length];
+
+                for (int i = 0; i < values.Length; i++)
+                {
+                    numbers[i] = Convert.ToInt32(values[i]);
+                }
+            }
+
+            MethodLibrary.MethodLibrary m = new MethodLibrary.MethodLibrary();
+
+            int result = m.Largest(numbers);
+
+            Assert.AreEqual(Convert.ToInt32(expected), result);
         }
     }
 }
